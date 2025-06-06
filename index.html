@@ -4,26 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TAP It! Bingo</title>
-    <!-- Styles for how the game looks -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter font family from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
     </style>
 </head>
 <body>
     <div id="root"></div>
-    <!-- The game itself -->
-    <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
+
+
+    <!-- Load React and ReactDOM from CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <!-- Babel for JSX transformation in the browser -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
 
 
     <script type="text/babel" src="./App.jsx"></script>
     <script type="text/babel">
-        ReactDOM.render(<App />, document.getElementById('root'));
+        // Use React 18's createRoot for rendering
+        const rootElement = document.getElementById('root');
+        if (rootElement) {
+            // App is now a global variable due to Babel transformation
+            ReactDOM.createRoot(rootElement).render(React.createElement(App, null));
+        } else {
+            console.error("Root element not found in the HTML.");
+        }
     </script>
 </body>
 </html>
