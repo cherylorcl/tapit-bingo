@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TAP It! Bingo</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Inter font family from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -14,6 +12,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            background-color: #ff5f33; /* Matches app background */
         }
     </style>
 </head>
@@ -21,24 +20,25 @@
     <div id="root"></div>
 
 
-    <!-- Load React and ReactDOM from CDN -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <!-- Babel for JSX transformation in the browser -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
 
+    <script type="module">
+        // Import the App component from App.jsx
+        import App from './App.jsx'; 
 
 
-    <script type="text/babel" src="./App.jsx"></script>
-    <script type="text/babel">
-        // Use React 18's createRoot for rendering
+        // Get the root element from your HTML
         const rootElement = document.getElementById('root');
+
+
+        // Check if the root element exists before trying to render
         if (rootElement) {
-            // App is now a global variable due to Babel transformation
+            // Use React 18's createRoot to render your App component
             ReactDOM.createRoot(rootElement).render(React.createElement(App, null));
         } else {
-            console.error("Root element not found in the HTML.");
+            console.error("Root element not found in the HTML. Cannot render React app.");
         }
     </script>
 </body>
