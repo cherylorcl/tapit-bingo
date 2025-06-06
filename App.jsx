@@ -7,7 +7,7 @@
 // 3. Go to File > Share > Publish to web.
 // 4. For "Link," choose "Comma-separated values (.csv)" from the dropdown for the sheet containing your challenges.
 // 5. Copy the URL provided and paste it below, replacing this placeholder.
-const GOOGLE_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR6x6jQKaba-ObZwlaKjRarAm1-8oM5tfzOVQX1rGgJFF8Ba6XTltBcU_5Tnv0zNrHvSnnH8g-ha9zg/pub?gid=0&single=true&output=csv"; // <<< REPLACE THIS
+const GOOGLE_SHEET_URL = "YOUR_GOOGLE_SHEET_CSV_URL_HERE"; // <<< REPLACE THIS
 
 
 // Function to shuffle an array (Fisher-Yates algorithm)
